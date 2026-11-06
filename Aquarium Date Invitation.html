@@ -81,11 +81,11 @@ function render(){
   var p=parseInt($('start').value,10),arr=p+95;
   var th=$('there');th.innerHTML='';
   th.appendChild(item({time:fmt(p),h:'🚗 Pick-up in Monroe',s:'The adventure begins.'}));
-  th.appendChild(item({time:'About '+fmt(arr),h:'🐧 Mystic Aquarium',s:'About 1 hr 35 min drive. Doors open at 10, and the sea lion show is at 1:00 or 2:30.'}));
+  th.appendChild(item({time:'About '+fmt(arr),h:'🐧 Mystic Aquarium',s:'About 1 hr 35 min drive. Doors open at 10'}));
 
   var bk=$('back');bk.innerHTML='';
   var t=915;
-  bk.appendChild(item({time:fmt(t),h:'Head out from Mystic',s:'Aquarium closes at 4, so we can squeeze in a last lap and the gift shop first.'}));
+  bk.appendChild(item({time:fmt(t),h:'Head out from Mystic',s:'We will grab a lunch after the aquarium, there are few options nearby'}));
   if(st.hammo){
     t+=60;
     bk.appendChild(item({time:fmt(t),h:'🐚 Hammonasset Beach',tag:'optional',s:'Madison. A sunset beach walk and shells, about 30 min. Sunset is close to 4:30, so this is our golden hour.',tog:'hammo'}));
@@ -96,10 +96,7 @@ function render(){
   }
   bk.appendChild(item({time:fmt(t),h:'🍎 Bishop’s Orchards',s:'Guilford. Cider, donuts and the farm animals, about 30 min. Open until 7.'}));
   t+=30+50;
-  if(st.dinner){
-    bk.appendChild(item({time:fmt(t),h:'🍝 Back to Monroe',s:'Home stretch.'}));
-    bk.appendChild(item({time:fmt(t+10),h:'Dinner at Osteria Romana',tag:'optional',s:'Cozy Italian on Main St. in Monroe, open until 10 on Saturdays. Reservation recommended.',tog:'dinner'}));
-  } else {
+  
     bk.appendChild(item({time:fmt(t),h:'🍝 Back to Monroe',s:'Home sweet home.'}));
     bk.appendChild(item({time:'',h:'Dinner in Monroe',tag:'optional',s:'Skipped for now.',off:true,tog:'dinner'}));
   }
